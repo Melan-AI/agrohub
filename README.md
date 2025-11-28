@@ -39,6 +39,3 @@ Next steps I can implement for you (pick one or more):
 - Harden auth (JWT + refresh tokens, or NextAuth).
 - Add rate-limiting, request logging, and usage billing for LLM calls.
 - Implement server-side streaming responses from Gemini.
-
-If you want me to wire the frontend to these endpoints (auth flows, file uploads, and chat), I can update the React app to call them and demonstrate the end-to-end flows.# agrohub
-integrating AI in agritech
