@@ -1,0 +1,28 @@
+# Server
+PORT=3000
+NEXT_PUBLIC_API_BASE=http://localhost:3000
+
+# Email (SMTP) - used by nodemailer for verification codes
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USER=your_smtp_user
+SMTP_PASS=your_smtp_password
+EMAIL_FROM="AgroHub <no-reply@agrohub.local>"
+
+# LLM / Gemini (Vertex AI) settings
+# Option A (recommended on GCP): set GOOGLE_APPLICATION_CREDENTIALS to path of service account JSON and set PROJECT_ID
+GOOGLE_PROJECT_ID=your-gcp-project-id
+# Option B (if using API key): set GEMINI_API_KEY (less secure for production)
+GEMINI_API_KEY=
+
+# S3 (optional) - if set, uploads go to S3; otherwise saved locally at /uploads
+S3_BUCKET=
+S3_REGION=
+S3_ACCESS_KEY_ID=
+S3_SECRET_ACCESS_KEY=
+
+# Prototype db path (lowdb)
+DB_FILE=./data/db.json
+
+# Security / JWT (simple prototype token)
+JWT_SECRET=change_me_to_a_strong_secret

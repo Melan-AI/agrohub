@@ -1,0 +1,78 @@
+:root{
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.12);
+  --accent-green: #34D399;
+  --accent-orange: #FB923C;
+  --text: #e9f5ee;
+  --muted: #c9d6c7;
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+*{box-sizing:border-box;}
+body{margin:0;background:linear-gradient(180deg,#072a14 0%,#062016 100%);color:var(--text);min-height:100vh;}
+.app{display:flex;flex-direction:column;min-height:100vh;}
+.nav{display:flex;justify-content:space-between;padding:14px 18px;align-items:center;}
+.logo{font-weight:700;color:var(--accent-green);text-decoration:none;font-size:1.2rem;}
+.btn{border:0;padding:8px 12px;border-radius:8px;cursor:pointer;background:transparent;color:var(--text);}
+.btn.primary{background:linear-gradient(90deg,var(--accent-green),var(--accent-orange));color:#04210a;font-weight:700;}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);}
+.hero{padding:60px 18px;display:flex;align-items:center;justify-content:center;height:60vh;background-image:url('/assets/kwara-hero.jpg');background-size:cover;background-position:center;}
+.hero-inner{text-align:center}
+.large{padding:14px 22px;border-radius:14px;font-size:1.05rem}
+
+/* Glass styles */
+.glass-box, .glass-panel, .glass-card, .glass-vision{
+  backdrop-filter: blur(8px) saturate(120%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid var(--glass-border);
+  border-radius:16px;
+  padding:16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.impact-cards{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.impact-cards .card{flex:1 1 200px;padding:18px;border-radius:12px;background:linear-gradient(90deg,rgba(52,211,153,0.06),rgba(251,146,60,0.04));}
+
+/* Marketplace */
+.marketplace{padding:20px}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.product-card{display:flex;flex-direction:column;border-radius:14px;overflow:hidden}
+.product-media{height:160px;background:linear-gradient(90deg,#0a3b21,#06321a);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.product-body{padding:12px}
+.price{color:var(--accent-green);font-weight:700;font-size:1.1rem}
+.card-actions{display:flex;gap:8px;margin-top:8px;}
+
+/* modal, drawer, chat, profile */
+.modal-backdrop{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.6));padding:20px}
+.modal{width:100%;max-width:760px}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tabs button{padding:10px 14px;border-radius:10px}
+.tabs .active{background:rgba(255,255,255,0.04)}
+.auth-form input, .auth-form textarea{width:100%;padding:8px;margin-bottom:8px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end}
+
+.drawer-backdrop{position:fixed;inset:0;display:flex;justify-content:flex-end;background:linear-gradient(180deg,rgba(0,0,0,0.2),rgba(0,0,0,0.6))}
+.drawer{width:360px;padding:12px;min-height:100vh;overflow:auto}
+.placeholder-map{height:180px;background:linear-gradient(90deg,#06321a,#042a16);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+
+.fab{position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,var(--accent-orange),var(--accent-green));border-radius:50%;width:56px;height:56px;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,0.6);border:none}
+
+.chat-modal{position:fixed;right:18px;bottom:86px;width:340px;max-height:70vh;display:flex;flex-direction:column}
+.chat-header{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.chat-body{padding:12px;overflow:auto;flex:1}
+.chat-msg{padding:8px 12px;border-radius:12px;margin-bottom:8px;max-width:85%}
+.chat-msg.agent{background:linear-gradient(90deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));align-self:flex-start}
+.chat-msg.user{background:linear-gradient(90deg,rgba(52,211,153,0.1),rgba(251,146,60,0.05));align-self:flex-end;color:#04210a}
+
+.profile-dropdown{position:relative}
+.avatar-btn{width:36px;height:36px;border-radius:50%;background:var(--accent-green);border:none;color:#04210a;font-weight:700}
+.profile-panel{position:absolute;right:0;top:46px;width:720px;display:flex;gap:12px;padding:12px}
+.profile-links{width:220px;display:flex;flex-direction:column;gap:6px}
+.profile-content{flex:1;background:transparent;padding:8px;border-radius:8px;}
+
+/* responsive */
+@media (max-width:720px){
+  .profile-panel{position:fixed;inset:12px;bottom:12px;flex-direction:column;width:auto}
+  .product-grid{grid-template-columns:1fr}
+  .drawer{width:100%}
+}
